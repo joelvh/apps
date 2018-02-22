@@ -39,20 +39,57 @@ Or install it yourself as:
 
 ### Gmail Email Markup
 
-You can generate [schema.org](http://schema.org) markup for email in Gmail utilizing simple helper classes.
+You can generate [schema.org](http://schema.org) markup for email in Gmail utilizing simple helper classes. Use the helper methods in `Apps::Adapters::Gmail::Markup` to easily define your markup.
 
-* Use the helper methods in `Apps::Adapters::Gmail::Markup` to easily define your markup
-* Helper methods to generate an object model for you to "fill in":
-  * [Confirm Action](https://developers.google.com/gmail/markup/reference/one-click-action) - `Apps::Adapters::Gmail::Markup#build_confirm_action`
-  * [Save Action](https://developers.google.com/gmail/markup/reference/one-click-action) - `Apps::Adapters::Gmail::Markup#build_save_action`
-  * [RSVP Action](https://developers.google.com/gmail/markup/reference/rsvp-action) - `Apps::Adapters::Gmail::Markup#build_rsvp_action`
-  * [View Action](https://developers.google.com/gmail/markup/reference/go-to-action) - `Apps::Adapters::Gmail::Markup#build_view_action`
-  * [Track Action](https://developers.google.com/gmail/markup/reference/go-to-action) - `Apps::Adapters::Gmail::Markup#build_track_action`
-* Helper methods to serialize your object model:
-  * `as_json` generates a `Hash` represenation of metadata
-  * `to_json` generates a JSON string representation of metadata
-  * `to_script` generates a "pretty" JSON enclosed by `script` tags specifying `JSON-LD` type
-    * NOTE: `to_script` is only available on "context" objects that represent the root of the markup needed for embedding in emails. This is the object returned by each of the helper methods above for each "Action"
+* [Confirm Action](https://developers.google.com/gmail/markup/reference/one-click-action)
+* [Save Action](https://developers.google.com/gmail/markup/reference/one-click-action)
+* [RSVP Action](https://developers.google.com/gmail/markup/reference/rsvp-action)
+* [View Action](https://developers.google.com/gmail/markup/reference/go-to-action)
+* [Track Action](https://developers.google.com/gmail/markup/reference/go-to-action)
+
+Explore `Apps::Adapters::Gmail::Markup` and related classes to see how you can customize your metadata.
+
+```ruby
+require 'apps/adapters/gmail/markup'
+
+# Confirm Action
+confirm_action = Apps::Adapters::Gmail::Markup.build_confirm_action
+
+confirm_action.as_json
+# => {"@context"=>"http://schema.org", "@type"=>"EmailMessage", "potentialAction"=>{"@type"=>"ConfirmAction", "handler"=>{"@type"=>"HttpActionHandler", "url"=>nil}}}
+
+puts confirm_action.to_json
+# => {"@context":"http://schema.org","@type":"EmailMessage","potentialAction":{"@type":"ConfirmAction","handler":{"@type":"HttpActionHandler","url":null}}}
+
+# NOTE: `to_script` is only available on "context" objects that represent the root of the markup needed for embedding in emails. This is the object returned by each of the helper methods above for each "Action"
+puts confirm_action.to_script
+# =>
+# <script type="application/ld+json">
+# {
+#   "@context": "http://schema.org",
+#   "@type": "EmailMessage",
+#   "potentialAction": {
+#     "@type": "ConfirmAction",
+#     "handler": {
+#       "@type": "HttpActionHandler",
+#       "url": null
+#     }
+#   }
+# }
+# </script>
+
+# Save Action
+save_action = Apps::Adapters::Gmail::Markup.build_save_action
+
+# RSVP Action
+rsvp_action = Apps::Adapters::Gmail::Markup.build_rsvp_action
+
+# View Action
+view_action = Apps::Adapters::Gmail::Markup.build_view_action
+
+# Track Action
+track_action = Apps::Adapters::Gmail::Markup.build_track_action
+```
 
 #### TODO
 
