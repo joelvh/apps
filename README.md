@@ -53,15 +53,17 @@ Explore `Apps::Adapters::Gmail::Markup` and related classes to see how you can c
 require 'apps/adapters/gmail/markup'
 
 # Confirm Action
-confirm_action = Apps::Adapters::Gmail::Markup.build_confirm_action
+confirm_action = Apps::Adapters::Gmail::Markup.build_confirm_action(url: 'http://example.org/handler/')
 
 confirm_action.as_json
-# => {"@context"=>"http://schema.org", "@type"=>"EmailMessage", "potentialAction"=>{"@type"=>"ConfirmAction", "handler"=>{"@type"=>"HttpActionHandler", "url"=>nil}}}
+# => {"@context"=>"http://schema.org", "@type"=>"EmailMessage", "potentialAction"=>{"@type"=>"ConfirmAction", "handler"=>{"@type"=>"HttpActionHandler", "url"=>"http://example.org/handler/"}}}
 
 puts confirm_action.to_json
-# => {"@context":"http://schema.org","@type":"EmailMessage","potentialAction":{"@type":"ConfirmAction","handler":{"@type":"HttpActionHandler","url":null}}}
+# => {"@context":"http://schema.org","@type":"EmailMessage","potentialAction":{"@type":"ConfirmAction","handler":{"@type":"HttpActionHandler","url":"http://example.org/handler/"}}}
 
-# NOTE: `to_script` is only available on "context" objects that represent the root of the markup needed for embedding in emails. This is the object returned by each of the helper methods above for each "Action"
+# NOTE: `to_script` is only available on "context" objects that represent the root of the markup
+#       needed for embedding in emails. This is the object returned by each of the helper methods
+#       above for each "Action"
 puts confirm_action.to_script
 # =>
 # <script type="application/ld+json">
@@ -72,7 +74,7 @@ puts confirm_action.to_script
 #     "@type": "ConfirmAction",
 #     "handler": {
 #       "@type": "HttpActionHandler",
-#       "url": null
+#       "url": "http://example.org/handler/"
 #     }
 #   }
 # }

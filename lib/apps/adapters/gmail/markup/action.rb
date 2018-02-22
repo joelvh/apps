@@ -6,13 +6,13 @@ module Apps
       module Markup
         class Action < Base
 
-          attr_accessor :handler_url
+          attr_accessor :url
           
           def as_json
             prune super.merge(
               "handler" => {
                 "@type" => "HttpActionHandler",
-                "url" => handler_url
+                "url" => url
               }
             )
           end
