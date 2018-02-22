@@ -21,9 +21,8 @@ module Apps
 
           def build_rsvp_action(**attrs)
             Event.new(**attrs).tap do |event|
-              event.build_location         unless event.location
-              event.location.build_address unless event.location.address
-              event.build_rsvp_actions     unless event.actions.any?
+              event.build_location     unless event.location
+              event.build_rsvp_actions unless event.actions.any?
             end
           end
 

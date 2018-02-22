@@ -25,7 +25,9 @@ module Apps
           end
 
           def build_location(**attrs)
-            self.location = Place.new(**attrs)
+            self.location = Place.new(**attrs).tap do |place|
+              place.build_address unless place.address
+            end
           end
 
           def build_rsvp_actions
