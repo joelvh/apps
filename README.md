@@ -4,9 +4,9 @@ This is a toolkit to easily integrate into platform marketplaces and extension p
 
 The Apps gem is currently under development, with the goal of facilitating the following:
 
-* Google
-  * [Gmail Add-ons](https://developers.google.com/gmail/add-ons/)
-  * [Gmail Email Markup](https://developers.google.com/gmail/markup/)
+* Gmail
+  * [Add-ons](https://developers.google.com/gmail/add-ons/)
+  * [Email Markup](https://developers.google.com/gmail/markup/)
   * AMP Pages
 * Microsoft Office 365
   * [Outlook Add-ins](https://docs.microsoft.com/en-us/outlook/add-ins/)
@@ -14,8 +14,8 @@ The Apps gem is currently under development, with the goal of facilitating the f
 * Slack
   * Bots
   * Commands
-* Heroku
-  * Addons Marketplace (SSO)
+* Heroku Elements Marketplace
+  * [Add-ons](https://devcenter.heroku.com/articles/building-an-add-on)
 * Facebook
   * Instant Articles
 
@@ -43,11 +43,11 @@ You can generate [schema.org](http://schema.org) markup for email in Gmail utili
 
 * Use the helper methods in `Apps::Adapters::Gmail::Markup` to easily define your markup
 * Helper methods to generate an object model for you to "fill in":
-  * Confirm Action - `Apps::Adapters::Gmail::Markup#build_confirm_action`
-  * Save Action - `Apps::Adapters::Gmail::Markup#build_save_action`
-  * RSVP Action - `Apps::Adapters::Gmail::Markup#build_rsvp_action`
-  * View Action - `Apps::Adapters::Gmail::Markup#build_view_action`
-  * Track Action - `Apps::Adapters::Gmail::Markup#build_track_action`
+  * [Confirm Action](https://developers.google.com/gmail/markup/reference/one-click-action) - `Apps::Adapters::Gmail::Markup#build_confirm_action`
+  * [Save Action](https://developers.google.com/gmail/markup/reference/one-click-action) - `Apps::Adapters::Gmail::Markup#build_save_action`
+  * [RSVP Action](https://developers.google.com/gmail/markup/reference/rsvp-action) - `Apps::Adapters::Gmail::Markup#build_rsvp_action`
+  * [View Action](https://developers.google.com/gmail/markup/reference/go-to-action) - `Apps::Adapters::Gmail::Markup#build_view_action`
+  * [Track Action](https://developers.google.com/gmail/markup/reference/go-to-action) - `Apps::Adapters::Gmail::Markup#build_track_action`
 * Helper methods to serialize your object model:
   * `as_json` generates a `Hash` represenation of metadata
   * `to_json` generates a JSON string representation of metadata
