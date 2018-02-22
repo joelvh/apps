@@ -10,11 +10,7 @@ module Apps
           end
 
           def to_script
-            buffer = []
-            buffer << %{<script type="application/ld+json">}
-            buffer << to_json(pretty: true)
-            buffer << %{</script>}
-            buffer.join("\n")
+            [%`<script type="application/ld+json">`, to_json(pretty: true), %`</script>`].join("\n")
           end
         end
       end
