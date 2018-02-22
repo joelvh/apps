@@ -93,6 +93,12 @@ view_action = Apps::Adapters::Gmail::Markup.build_view_action
 track_action = Apps::Adapters::Gmail::Markup.build_track_action
 ```
 
+You need to [register with Google](https://developers.google.com/gmail/markup/registering-with-google) to get your actions approved.
+
+**Related Resoures:**
+
+* [A Guide to Setting up Gmail Inbox Actions](http://blog.meldium.com/home/2014/5/19/setting-up-gmail-inbox-actions) by Meldium
+
 #### TODO
 
 * Basic handler endpoints for "Actions" to interact with need to be facilitated (e.g. for RSVP Action)
