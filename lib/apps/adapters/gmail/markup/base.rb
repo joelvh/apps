@@ -6,11 +6,7 @@ module Apps
       module Markup
         class Base
           def initialize(**attrs)
-            attrs.each do |name, value|
-              next if value.nil?
-              
-              instance_variable_set(:"@#{name}", value)
-            end
+            prune(attrs).each { |name, value| instance_variable_set(:"@#{name}", value) }
           end
 
           def type
