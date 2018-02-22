@@ -105,6 +105,11 @@ You need to [register with Google](https://developers.google.com/gmail/markup/re
 * Email Markup helpers for other Gmail-supported metadata need to be implemented
 * Additional Gmail integrations need to be developed
 
+### Microsoft Office 365
+
+* [Office Developer](https://github.com/OfficeDev) - git repositories of example projects for Outlook Add-ins, etc.
+* [Yeoman generator](https://github.com/OfficeDev/generator-office) - generator for creating [Microsoft office Add-ins](https://docs.microsoft.com/en-us/office/dev/add-ins/)
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
