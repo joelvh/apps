@@ -1,0 +1,12 @@
+--fail-fast
+--cache=true
+--debug
+--extra-details
+--color
+--rails
+--auto-correct
+app
+config
+lib
+spec
+vendor
