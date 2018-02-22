@@ -10,7 +10,7 @@ module Apps
           end
 
           def to_script
-            [%`<script type="application/ld+json">`, to_json(pretty: true), %`</script>`].join("\n")
+            %`<script type="application/ld+json">\n#{to_json(pretty: true)}\n</script>`
           end
         end
       end
