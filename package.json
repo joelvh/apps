@@ -1,0 +1,12 @@
+{
+  "name": "apps",
+  "version": "0.2.2",
+  "description": "Easily integrate with multiple platform apps/add-ins/add-ons marketplaces.",
+  "main": "index.js",
+  "repository": "https://github.com/joelvh/apps",
+  "author": "Joel Van Horn <joel@joelvanhorn.com>",
+  "license": "MIT",
+  "dependencies": {
+    "generator-office": "^1.1.7"
+  }
+}
