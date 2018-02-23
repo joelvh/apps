@@ -109,6 +109,7 @@ You need to [register with Google](https://developers.google.com/gmail/markup/re
 
 * [Office Developer](https://github.com/OfficeDev) - git repositories of example projects for Outlook Add-ins, etc.
 * [Yeoman generator](https://github.com/OfficeDev/generator-office) - generator for creating [Microsoft office Add-ins](https://docs.microsoft.com/en-us/office/dev/add-ins/)
+* [Message Card Playground](https://messagecardplayground.azurewebsites.net/) - test schema.org markup and how it generates add-in UI
 
 ## Development
 
