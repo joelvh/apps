@@ -39,7 +39,7 @@ Or install it yourself as:
 
 ### Gmail Email Markup
 
-You can generate [schema.org](http://schema.org) markup for email in Gmail utilizing simple helper classes. Use the helper methods in `Apps::Adapters::Gmail::Markup` to easily define your markup.
+You can generate [schema.org](http://schema.org) markup for email in Gmail utilizing simple helper classes. Use the helper methods in `Apps::Gmail::Markup` to easily define your markup.
 
 * [Confirm Action](https://developers.google.com/gmail/markup/reference/one-click-action)
 * [Save Action](https://developers.google.com/gmail/markup/reference/one-click-action)
@@ -47,13 +47,13 @@ You can generate [schema.org](http://schema.org) markup for email in Gmail utili
 * [View Action](https://developers.google.com/gmail/markup/reference/go-to-action)
 * [Track Action](https://developers.google.com/gmail/markup/reference/go-to-action)
 
-Explore `Apps::Adapters::Gmail::Markup` and related classes to see how you can customize your metadata.
+Explore `Apps::Gmail::Markup` and related classes to see how you can customize your metadata.
 
 ```ruby
-require 'apps/adapters/gmail/markup'
+require 'apps/gmail/markup'
 
 # Confirm Action
-confirm_action = Apps::Adapters::Gmail::Markup.build_confirm_action(url: 'http://example.org/handler/')
+confirm_action = Apps::Gmail::Markup.build_confirm_action(url: 'http://example.org/handler/')
 
 confirm_action.as_json
 # => {"@context"=>"http://schema.org", "@type"=>"EmailMessage", "potentialAction"=>{"@type"=>"ConfirmAction", "handler"=>{"@type"=>"HttpActionHandler", "url"=>"http://example.org/handler/"}}}
@@ -81,16 +81,16 @@ puts confirm_action.to_script
 # </script>
 
 # Save Action
-save_action = Apps::Adapters::Gmail::Markup.build_save_action
+save_action = Apps::Gmail::Markup.build_save_action
 
 # RSVP Action
-rsvp_action = Apps::Adapters::Gmail::Markup.build_rsvp_action
+rsvp_action = Apps::Gmail::Markup.build_rsvp_action
 
 # View Action
-view_action = Apps::Adapters::Gmail::Markup.build_view_action
+view_action = Apps::Gmail::Markup.build_view_action
 
 # Track Action
-track_action = Apps::Adapters::Gmail::Markup.build_track_action
+track_action = Apps::Gmail::Markup.build_track_action
 ```
 
 You need to [register with Google](https://developers.google.com/gmail/markup/registering-with-google) to get your actions approved.
