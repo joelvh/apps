@@ -10,10 +10,10 @@ module Apps
 
           attr_accessor :name, :confirmed
           
-          def as_json
-            prune super.merge(
+          def serialize
+            super.merge(
               "name" => name,
-              "confirmed" => confirmed&.as_json # Thing
+              "confirmed" => confirmed&.serialize # Thing
             )
           end
         end

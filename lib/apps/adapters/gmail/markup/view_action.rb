@@ -10,11 +10,11 @@ module Apps
 
           attr_accessor :name, :target, :viewed
           
-          def as_json
-            prune super.merge(
+          def serialize
+            super.merge(
               "name" => name,
               "target" => target,
-              "viewed" => viewed&.as_json # Thing
+              "viewed" => viewed&.serialize # Thing
             )
           end
         end

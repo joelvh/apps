@@ -8,8 +8,8 @@ module Apps
 
           attr_accessor :url
           
-          def as_json
-            prune super.merge(
+          def serialize
+            super.merge(
               "handler" => {
                 "@type" => "HttpActionHandler",
                 "url" => url

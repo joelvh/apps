@@ -5,7 +5,7 @@ module Apps
     module Gmail
       module Markup
         class BaseContext < Base
-          def as_json
+          def serialize
             { "@context" => "http://schema.org" }.merge(super)
           end
 

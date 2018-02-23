@@ -9,11 +9,11 @@ module Apps
 
           attr_accessor :name, :same_as, :address
           
-          def as_json
-            prune super.merge(
+          def serialize
+            super.merge(
               "sameAs" => same_as,
               "name" => name,
-              "address" => address&.as_json
+              "address" => address&.serialize
             )
           end
 

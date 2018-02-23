@@ -10,13 +10,13 @@ module Apps
 
           attr_accessor :name, :start_date, :end_date, :location
           
-          def as_json
-            prune super.merge(
+          def serialize
+            super.merge(
               "name" => name,
               "startDate" => start_date,
               "endDate" => end_date,
-              "location" => location&.as_json,
-              "potentialAction" => actions.map(&:as_json)
+              "location" => location&.serialize,
+              "potentialAction" => actions.map(&:serialize)
             )
           end
 

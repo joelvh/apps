@@ -13,8 +13,12 @@ module Apps
             @type ||= self.class.name.split('::')[-1]
           end
 
-          def as_json
+          def serialize
             { "@type" => type }
+          end
+
+          def as_json
+            prune serialize
           end
 
           def to_json(pretty: false)
@@ -24,7 +28,15 @@ module Apps
         protected
 
           def prune(hash)
-            hash.reject { |_, value| value.nil? }
+            hash.each_with_object({}) do |(key, value), result|
+              # recursive prune
+              result[key] = case value
+                            when nil   then next
+                            when Array then value.map{ |v| v.is_a?(Hash) ? prune(v) : v }
+                            when Hash  then prune value
+                            else value
+                            end
+            end
           end
         end
       end

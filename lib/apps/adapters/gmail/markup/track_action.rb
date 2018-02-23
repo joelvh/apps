@@ -10,11 +10,11 @@ module Apps
 
           attr_accessor :name, :target, :delivery_method
           
-          def as_json
-            prune super.merge(
+          def serialize
+            super.merge(
               "name" => name,
               "target" => target,
-              "deliveryMethod" => delivery_method&.as_json # DeliveryMethod
+              "deliveryMethod" => delivery_method&.serialize # DeliveryMethod
             )
           end
         end

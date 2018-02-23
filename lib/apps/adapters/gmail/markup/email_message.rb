@@ -9,10 +9,10 @@ module Apps
           attr_reader   :action
           attr_accessor :description, :publisher
           
-          def as_json
-            prune super.merge(
-              "potentialAction" => action&.as_json,
-              "publisher" => publisher&.as_json # Organization
+          def serialize
+            super.merge(
+              "potentialAction" => action&.serialize,
+              "publisher" => publisher&.serialize # Organization
             )
           end
         end

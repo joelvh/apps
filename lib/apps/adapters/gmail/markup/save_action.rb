@@ -10,8 +10,8 @@ module Apps
 
           attr_accessor :name
           
-          def as_json
-            prune super.merge(
+          def serialize
+            super.merge(
               "name" => name
             )
           end

@@ -9,8 +9,8 @@ module Apps
 
           attr_accessor :response, :additional_number_of_guests, :bringing_kids, :bringing_other_people
           
-          def as_json
-            prune super.merge(
+          def serialize
+            super.merge(
               "rsvpResponse" => response.downcase,
               "additionalNumberOfGuests" => additional_number_of_guests&.to_i,
               "bringingKids" => bringing_kids&.to_i,

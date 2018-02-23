@@ -12,9 +12,9 @@ module Apps
           attr_accessor :product_name, :order_number, :merchant_name
           attr_accessor :tracking_url
           
-          def as_json
-            prune super.merge(
-              "deliveryAddress" => delivery_address&.as_json,
+          def serialize
+            super.merge(
+              "deliveryAddress" => delivery_address&.serialize,
               "expectedArrivalUntil" => expected_arrival_until,
               "carrier" => {
                 "@type" => "Organization",
@@ -33,7 +33,7 @@ module Apps
                 }
               },
               "trackingUrl" => tracking_url,
-              "potentialAction" => action&.as_json
+              "potentialAction" => action&.serialize
             )
           end
 

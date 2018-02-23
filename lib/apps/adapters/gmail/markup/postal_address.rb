@@ -8,8 +8,8 @@ module Apps
 
           attr_accessor :name, :street, :locality, :region, :po_box, :postal_code, :country
           
-          def as_json
-            prune super.merge(
+          def serialize
+            super.merge(
               "name" => name,
               "streetAddress" => street,       # street address
               "addressLocality" => locality,   # city
