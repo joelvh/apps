@@ -3,18 +3,18 @@ require_relative 'base'
 module Apps
   module Adapters
     module Gmail
-      module Markup
+      module Schema
         # See: https://developers.google.com/gmail/markup/reference/go-to-action
-        # See: https://developers.google.com/gmail/markup/reference/types/TrackAction
-        class TrackAction < Base
+        # See: https://developers.google.com/gmail/markup/reference/types/ViewAction
+        class ViewAction < Base
 
-          attr_accessor :name, :target, :delivery_method
+          attr_accessor :name, :target, :viewed
           
           def serialize
             super.merge(
               "name" => name,
               "target" => target,
-              "deliveryMethod" => delivery_method&.serialize # DeliveryMethod
+              "viewed" => viewed&.serialize # Thing
             )
           end
         end

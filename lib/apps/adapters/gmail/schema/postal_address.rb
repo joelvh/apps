@@ -3,7 +3,7 @@ require_relative 'base'
 module Apps
   module Adapters
     module Gmail
-      module Markup
+      module Schema
         class PostalAddress < Base
 
           attr_accessor :name, :street, :locality, :region, :po_box, :postal_code, :country

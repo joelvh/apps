@@ -3,7 +3,7 @@ require_relative 'action'
 module Apps
   module Adapters
     module Gmail
-      module Markup
+      module Schema
         # See: https://developers.google.com/gmail/markup/reference/rsvp-action
         class RsvpAction < Action
 

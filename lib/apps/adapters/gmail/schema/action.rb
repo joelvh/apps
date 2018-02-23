@@ -3,7 +3,7 @@ require_relative 'base'
 module Apps
   module Adapters
     module Gmail
-      module Markup
+      module Schema
         class Action < Base
 
           attr_accessor :url

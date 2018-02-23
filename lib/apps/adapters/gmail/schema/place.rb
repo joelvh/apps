@@ -4,7 +4,7 @@ require_relative 'postal_address'
 module Apps
   module Adapters
     module Gmail
-      module Markup
+      module Schema
         class Place < Base
 
           attr_accessor :name, :same_as, :address

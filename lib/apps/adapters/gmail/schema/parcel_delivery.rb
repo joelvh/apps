@@ -4,7 +4,7 @@ require_relative 'postal_address'
 module Apps
   module Adapters
     module Gmail
-      module Markup
+      module Schema
         class ParcelDelivery < BaseContext
 
           attr_reader   :action

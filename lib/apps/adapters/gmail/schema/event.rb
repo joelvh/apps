@@ -5,7 +5,7 @@ require_relative 'place'
 module Apps
   module Adapters
     module Gmail
-      module Markup
+      module Schema
         class Event < BaseContext
 
           attr_accessor :name, :start_date, :end_date, :location

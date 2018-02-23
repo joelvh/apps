@@ -3,7 +3,7 @@ require_relative 'base'
 module Apps
   module Adapters
     module Gmail
-      module Markup
+      module Schema
         class BaseContext < Base
           def serialize
             { "@context" => "http://schema.org" }.merge(super)

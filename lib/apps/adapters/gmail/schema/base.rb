@@ -3,7 +3,7 @@ require 'json'
 module Apps
   module Adapters
     module Gmail
-      module Markup
+      module Schema
         class Base
           def initialize(**attrs)
             prune(attrs).each { |name, value| instance_variable_set(:"@#{name}", value) }

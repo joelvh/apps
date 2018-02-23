@@ -3,7 +3,7 @@ require_relative 'base_context'
 module Apps
   module Adapters
     module Gmail
-      module Markup
+      module Schema
         class EmailMessage < BaseContext
 
           attr_reader   :action
