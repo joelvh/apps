@@ -121,7 +121,23 @@ You need to [register with Google](https://developers.google.com/gmail/markup/re
 * [Yeoman generator](https://github.com/OfficeDev/generator-office) - generator for creating [Microsoft office Add-ins](https://docs.microsoft.com/en-us/office/dev/add-ins/)
 * [Message Card Playground](https://messagecardplayground.azurewebsites.net/) - test schema.org markup and how it generates add-in UI
 
-#### Outlook
+#### Outlook: Actionable Messages via Email
+
+All Actionable Card markup schemas supported by Microsoft Office are implemented in this library (see [Actionable message card reference](https://docs.microsoft.com/en-us/outlook/actionable-messages/card-reference)).
+
+```ruby
+require 'apps/outlook/actionable_messages'
+
+message_card = Apps::Outlook::ActionableMessages.message_card('Summary text', 'Title text')
+```
+
+You can take a look at (and run) [lib/examples.rb](./lib/examples.rb) to see some sample markup.
+
+    $ ruby lib/examples.rb
+
+You can get more example schemas or copy/paste the output of `examples.rb` to test rendering here: https://messagecardplayground.azurewebsites.net/
+
+**Related Resources:**
 
 * [Actionable Messages via Email](https://docs.microsoft.com/en-us/outlook/actionable-messages/actionable-messages-via-email)
   * [Actionable message card reference](https://docs.microsoft.com/en-us/outlook/actionable-messages/card-reference)
