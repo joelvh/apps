@@ -24,40 +24,16 @@ require_relative 'apps/gmail/markup'
 
 puts "GMAIL TESTS"
 
-# Confirm Action (takes additional keyword options)
 confirm_action = Apps::Gmail::Markup.confirm_action('Button Text', 'http://example.org/confirm/endpoint')
 
 show 'confirm_action.as_json', confirm_action.as_json
-# => {"@context"=>"http://schema.org", "@type"=>"EmailMessage", "potentialAction"=>{"@type"=>"ConfirmAction", "handler"=>{"@type"=>"HttpActionHandler", "url"=>"http://example.org/confirm/endpoint"}}}
-
 show 'confirm_action.to_json', confirm_action.to_json
-# => {"@context":"http://schema.org","@type":"EmailMessage","potentialAction":{"@type":"ConfirmAction","handler":{"@type":"HttpActionHandler","url":"http://example.org/confirm/endpoint"}}}
-
-# NOTE: `to_script` is only available on "context" objects that represent the root of the markup
-#       needed for embedding in emails. This is the object returned by each of the helper methods
-#       above for each "Action"
 show 'confirm_action.to_script', confirm_action.to_script
-# =>
-# <script type="application/ld+json">
-# {
-#   "@context": "http://schema.org",
-#   "@type": "EmailMessage",
-#   "potentialAction": {
-#     "@type": "ConfirmAction",
-#     "handler": {
-#       "@type": "HttpActionHandler",
-#       "url": "http://example.org/confirm/endpoint"
-#     }
-#   }
-# }
-# </script>
 
-# Save Action (takes additional keyword options)
 save_action = Apps::Gmail::Markup.save_action('Button Text', 'http://example.org/save/endpoint')
 
 show 'save_action', save_action.to_script
 
-# RSVP Action (takes additional keyword options)
 rsvp_action = Apps::Gmail::Markup.rsvp_action('Event Name',
                 yes_url:   'http://example.org/yes/endpoint',
                 no_url:    'http://example.org/no/endpoint',
@@ -66,12 +42,10 @@ rsvp_action = Apps::Gmail::Markup.rsvp_action('Event Name',
 
 show 'rsvp_action', rsvp_action.to_script
 
-# View Action (takes additional keyword options)
 view_action = Apps::Gmail::Markup.view_action('Button Text', 'http://example.org/save/endpoint')
 
 show 'view_action', view_action.to_script
 
-# Track Action (takes additional keyword options)
 track_action = Apps::Gmail::Markup.track_action('Button Text', 'http://example.org/save/endpoint')
 
 show 'track_action', track_action.to_script
