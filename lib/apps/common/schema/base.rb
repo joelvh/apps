@@ -1,7 +1,7 @@
 require 'json'
 
 module Apps
-  module Gmail
+  module Common
     module Schema
       class Base
         def initialize(**attrs)

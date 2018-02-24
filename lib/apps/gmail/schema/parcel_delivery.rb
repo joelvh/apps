@@ -1,10 +1,10 @@
-require_relative 'base_context'
+require_relative '../../common/schema/base_context'
 require_relative 'postal_address'
 
 module Apps
   module Gmail
     module Schema
-      class ParcelDelivery < BaseContext
+      class ParcelDelivery < ::Apps::Common::Schema::BaseContext
 
         attr_reader   :action
         attr_accessor :delivery_address, :expected_arrival_until, :carrier_name

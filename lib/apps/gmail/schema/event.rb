@@ -1,11 +1,11 @@
-require_relative 'base_context'
+require_relative '../../common/schema/base_context'
 require_relative 'rsvp_action'
 require_relative 'place'
 
 module Apps
   module Gmail
     module Schema
-      class Event < BaseContext
+      class Event < ::Apps::Common::Schema::BaseContext
 
         attr_accessor :name, :start_date, :end_date, :location
         

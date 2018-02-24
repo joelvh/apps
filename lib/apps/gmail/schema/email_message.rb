@@ -1,9 +1,9 @@
-require_relative 'base_context'
+require_relative '../../common/schema/base_context'
 
 module Apps
   module Gmail
     module Schema
-      class EmailMessage < BaseContext
+      class EmailMessage < ::Apps::Common::Schema::BaseContext
 
         attr_reader   :action
         attr_accessor :description, :publisher

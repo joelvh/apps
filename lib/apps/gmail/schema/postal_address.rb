@@ -1,9 +1,9 @@
-require_relative 'base'
+require_relative '../../common/schema/base'
 
 module Apps
   module Gmail
     module Schema
-      class PostalAddress < Base
+      class PostalAddress < ::Apps::Common::Schema::Base
 
         attr_accessor :name, :street, :locality, :region, :po_box, :postal_code, :country
         
