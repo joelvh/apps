@@ -1,6 +1,6 @@
 {
   "name": "apps",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Easily integrate with multiple platform apps/add-ins/add-ons marketplaces.",
   "main": "index.js",
   "repository": "https://github.com/joelvh/apps",
