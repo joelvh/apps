@@ -121,6 +121,13 @@ You need to [register with Google](https://developers.google.com/gmail/markup/re
 * [Yeoman generator](https://github.com/OfficeDev/generator-office) - generator for creating [Microsoft office Add-ins](https://docs.microsoft.com/en-us/office/dev/add-ins/)
 * [Message Card Playground](https://messagecardplayground.azurewebsites.net/) - test schema.org markup and how it generates add-in UI
 
+#### Outlook
+
+* [Actionable Messages via Email](https://docs.microsoft.com/en-us/outlook/actionable-messages/actionable-messages-via-email)
+  * [Actionable message card reference](https://docs.microsoft.com/en-us/outlook/actionable-messages/card-reference)
+* [Register your service with the actionable email developer dashboard](https://docs.microsoft.com/en-us/outlook/actionable-messages/actionable-email-dev-dashboard)
+* [Register your connector with the Office 365 Connectors developer dashboard](https://docs.microsoft.com/en-us/outlook/actionable-messages/connectors-dev-dashboard) - setup a connector for users to authorize your add-in
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
