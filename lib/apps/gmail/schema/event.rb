@@ -1,12 +1,12 @@
-require_relative '../../common/schema/base_context'
 require_relative 'rsvp_action'
 require_relative 'place'
 
 module Apps
   module Gmail
     module Schema
-      class Event < ::Apps::Common::Schema::BaseContext
-
+      class Event < Base
+        include Schema::Concerns::PotentialAction
+        
         attr_accessor :name, :start_date, :end_date, :location
         
         def serialize
@@ -14,13 +14,8 @@ module Apps
             "name" => name,
             "startDate" => start_date,
             "endDate" => end_date,
-            "location" => location&.serialize,
-            "potentialAction" => actions.map(&:serialize)
+            "location" => location&.serialize
           )
-        end
-
-        def actions
-          @actions ||= []
         end
 
         def build_location(**attrs)

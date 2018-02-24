@@ -1,9 +1,7 @@
-require_relative '../../common/schema/base'
-
 module Apps
   module Gmail
     module Schema
-      class Action < ::Apps::Common::Schema::Base
+      class Action < Base
 
         attr_accessor :url
         

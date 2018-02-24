@@ -1,12 +1,11 @@
-require_relative '../../common/schema/base_context'
 require_relative 'postal_address'
 
 module Apps
   module Gmail
     module Schema
-      class ParcelDelivery < ::Apps::Common::Schema::BaseContext
-
-        attr_reader   :action
+      class ParcelDelivery < Base
+        include Schema::Concerns::PotentialAction
+        
         attr_accessor :delivery_address, :expected_arrival_until, :carrier_name
         attr_accessor :product_name, :order_number, :merchant_name
         attr_accessor :tracking_url
@@ -31,8 +30,7 @@ module Apps
                 "name" => merchant_name
               }
             },
-            "trackingUrl" => tracking_url,
-            "potentialAction" => action&.serialize
+            "trackingUrl" => tracking_url
           )
         end
 

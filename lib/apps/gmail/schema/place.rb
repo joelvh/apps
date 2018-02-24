@@ -1,10 +1,9 @@
-require_relative '../../common/schema/base'
 require_relative 'postal_address'
 
 module Apps
   module Gmail
     module Schema
-      class Place < ::Apps::Common::Schema::Base
+      class Place < Base
 
         attr_accessor :name, :same_as, :address
         

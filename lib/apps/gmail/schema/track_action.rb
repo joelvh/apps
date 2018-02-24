@@ -1,11 +1,9 @@
-require_relative '../../common/schema/base'
-
 module Apps
   module Gmail
     module Schema
       # See: https://developers.google.com/gmail/markup/reference/go-to-action
       # See: https://developers.google.com/gmail/markup/reference/types/TrackAction
-      class TrackAction < ::Apps::Common::Schema::Base
+      class TrackAction < Base
 
         attr_accessor :name, :target, :delivery_method
         

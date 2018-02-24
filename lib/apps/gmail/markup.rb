@@ -1,10 +1,4 @@
-require_relative 'schema/event'
-require_relative 'schema/email_message'
-require_relative 'schema/parcel_delivery'
-require_relative 'schema/confirm_action'
-require_relative 'schema/save_action'
-require_relative 'schema/view_action'
-require_relative 'schema/track_action'
+require_relative 'schema'
 
 module Apps
   module Gmail
@@ -23,10 +17,10 @@ module Apps
         #   }
         # }
         def confirm_action(name, url, **attrs)
-          action  = Schema::ConfirmAction.new(name: name, url: url)
-          context = Schema::EmailMessage.new(action: action, **attrs)
+          action = Schema::ConfirmAction.new(name: name, url: url)
+          root   = Schema::EmailMessage.new(action: action, **attrs)
 
-          context
+          root
         end
 
         # {
@@ -42,10 +36,10 @@ module Apps
         #   }
         # }
         def save_action(name, url, **attrs)
-          action  = Schema::SaveAction.new(name: name, url: url)
-          context = Schema::EmailMessage.new(action: action, **attrs)
+          action = Schema::SaveAction.new(name: name, url: url)
+          root   = Schema::EmailMessage.new(action: action, **attrs)
 
-          context
+          root
         end
 
         # {
@@ -89,9 +83,9 @@ module Apps
         #   ]
         # }
         def rsvp_action(name, yes_url: nil, no_url: nil, maybe_url: nil, **attrs)
-          Schema::Event.new(name: name, **attrs).tap do |context|
-            context.build_location     unless context.location
-            context.build_rsvp_actions unless context.actions.any?
+          Schema::Event.new(name: name, **attrs).tap do |root|
+            root.build_location     unless root.location
+            root.build_rsvp_actions unless root.actions.any?
 
             responses = {
               'Yes' => yes_url,
@@ -103,8 +97,8 @@ module Apps
             responses.each do |response, url|
               next if url.nil?
 
-              action = context.actions.find { |action| action.response == response }
-              action ||= context.add_action_for(response)
+              action = root.actions.find { |action| action.response == response }
+              action ||= root.add_action_for(response)
 
               action.url = url
             end
@@ -121,10 +115,10 @@ module Apps
         #   }
         # }
         def view_action(name, target, **attrs)
-          action  = Schema::ViewAction.new(name: name, target: target)
-          context = Schema::EmailMessage.new(action: action, **attrs)
+          action = Schema::ViewAction.new(name: name, target: target)
+          root   = Schema::EmailMessage.new(action: action, **attrs)
 
-          context
+          root
         end
 
         # {
@@ -152,10 +146,10 @@ module Apps
         #   }
         # }
         def track_action(name, target, **attrs)
-          action  = Schema::TrackAction.new(name: name, target: target)
+          action = Schema::TrackAction.new(name: name, target: target)
           
-          Schema::ParcelDelivery.new(action: action, **attrs).tap do |context|
-            context.build_delivery_address unless context.delivery_address
+          Schema::ParcelDelivery.new(action: action, **attrs).tap do |root|
+            root.build_delivery_address unless root.delivery_address
           end
         end
       end
