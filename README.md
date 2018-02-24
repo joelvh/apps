@@ -101,7 +101,13 @@ You need to [register with Google](https://developers.google.com/gmail/markup/re
 
 **Related Resoures:**
 
-* [A Guide to Setting up Gmail Inbox Actions](http://blog.meldium.com/home/2014/5/19/setting-up-gmail-inbox-actions) by Meldium
+* [Embeding JSON-LD in HTML Documents](https://json-ld.org/spec/latest/json-ld/#embedding-json-ld-in-html-documents)
+* [Test Your Schemas](https://developers.google.com/gmail/markup/testing-your-schema)
+  * [Email Markup Tester](https://www.google.com/webmasters/markup-tester/)
+  * [Structured Data Markup Helper](https://www.google.com/webmasters/markup-helper/?email=true)
+* [Register with Google](https://developers.google.com/gmail/markup/registering-with-google)
+* Articles:
+  * [A Guide to Setting up Gmail Inbox Actions](http://blog.meldium.com/home/2014/5/19/setting-up-gmail-inbox-actions) by Meldium
 
 #### TODO
 
