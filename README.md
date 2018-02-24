@@ -52,14 +52,14 @@ Explore `Apps::Gmail::Markup` and related classes to see how you can customize y
 ```ruby
 require 'apps/gmail/markup'
 
-# Confirm Action
-confirm_action = Apps::Gmail::Markup.build_confirm_action(url: 'http://example.org/handler/')
+# Confirm Action (takes additional keyword options)
+confirm_action = Apps::Gmail::Markup.confirm_action('Button Text', 'http://example.org/confirm/endpoint')
 
 confirm_action.as_json
-# => {"@context"=>"http://schema.org", "@type"=>"EmailMessage", "potentialAction"=>{"@type"=>"ConfirmAction", "handler"=>{"@type"=>"HttpActionHandler", "url"=>"http://example.org/handler/"}}}
+# => {"@context"=>"http://schema.org", "@type"=>"EmailMessage", "potentialAction"=>{"@type"=>"ConfirmAction", "handler"=>{"@type"=>"HttpActionHandler", "url"=>"http://example.org/confirm/endpoint"}}}
 
 puts confirm_action.to_json
-# => {"@context":"http://schema.org","@type":"EmailMessage","potentialAction":{"@type":"ConfirmAction","handler":{"@type":"HttpActionHandler","url":"http://example.org/handler/"}}}
+# => {"@context":"http://schema.org","@type":"EmailMessage","potentialAction":{"@type":"ConfirmAction","handler":{"@type":"HttpActionHandler","url":"http://example.org/confirm/endpoint"}}}
 
 # NOTE: `to_script` is only available on "context" objects that represent the root of the markup
 #       needed for embedding in emails. This is the object returned by each of the helper methods
@@ -74,23 +74,27 @@ puts confirm_action.to_script
 #     "@type": "ConfirmAction",
 #     "handler": {
 #       "@type": "HttpActionHandler",
-#       "url": "http://example.org/handler/"
+#       "url": "http://example.org/confirm/endpoint"
 #     }
 #   }
 # }
 # </script>
 
-# Save Action
-save_action = Apps::Gmail::Markup.build_save_action
+# Save Action (takes additional keyword options)
+save_action = Apps::Gmail::Markup.save_action('Button Text', 'http://example.org/save/endpoint')
 
-# RSVP Action
-rsvp_action = Apps::Gmail::Markup.build_rsvp_action
+# RSVP Action (takes additional keyword options)
+rsvp_action = Apps::Gmail::Markup.rsvp_action('Event Name',
+                yes_url:   'http://example.org/yes/endpoint',
+                no_url:    'http://example.org/no/endpoint',
+                maybe_url: 'http://example.org/maybe/endpoint'
+              )
 
-# View Action
-view_action = Apps::Gmail::Markup.build_view_action
+# View Action (takes additional keyword options)
+view_action = Apps::Gmail::Markup.view_action('Button Text', 'http://example.org/save/endpoint')
 
-# Track Action
-track_action = Apps::Gmail::Markup.build_track_action
+# Track Action (takes additional keyword options)
+track_action = Apps::Gmail::Markup.track_action('Button Text', 'http://example.org/save/endpoint')
 ```
 
 You need to [register with Google](https://developers.google.com/gmail/markup/registering-with-google) to get your actions approved.

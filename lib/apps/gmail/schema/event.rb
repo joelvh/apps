@@ -30,7 +30,15 @@ module Apps
         end
 
         def build_rsvp_actions
-          actions.clear.concat(%w[Yes No Maybe].map { |response| RsvpAction.new(response: response) })
+          actions.clear
+          
+          %w[Yes No Maybe].map { |response| add_action_for(response) }
+        end
+        
+        def add_action_for(response, **attrs)
+          RsvpAction.new(response: response, **attrs).tap do |action|
+            actions << action
+          end
         end
       end
     end
