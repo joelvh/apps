@@ -7,19 +7,19 @@ The Apps gem is currently under development, with the goal of facilitating the f
 * Gmail
   * [ ] [Add-ons](https://developers.google.com/gmail/add-ons/)
   * [x] [Email Markup](https://developers.google.com/gmail/markup/)
-  * [ ] AMP Pages
+  * [ ] [AMP Pages](https://www.ampproject.org/)
 * Microsoft Office 365
   * [ ] [Outlook Add-ins](https://docs.microsoft.com/en-us/outlook/add-ins/)
   * [x] [Outlook Actionable Messages](https://docs.microsoft.com/en-us/outlook/actionable-messages/)
 * Slack
-  * [ ] Bots
-  * [ ] Commands
+  * [ ] [Bot Users](https://api.slack.com/bot-users)
+  * [ ] [Slash Commands](https://api.slack.com/slash-commands)
 * Heroku Elements Marketplace
   * [ ] [Add-ons](https://devcenter.heroku.com/articles/building-an-add-on)
 * Facebook
-  * [ ] Instant Articles
+  * [ ] [Instant Articles](https://instantarticles.fb.com/)
 * Google
-  * [ ] Progressive Web Apps
+  * [ ] [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/)
 
 ## Installation
 
