@@ -18,6 +18,8 @@ The Apps gem is currently under development, with the goal of facilitating the f
   * [ ] [Add-ons](https://devcenter.heroku.com/articles/building-an-add-on)
 * Facebook
   * [ ] Instant Articles
+* Google
+  * [ ] Progressive Web Apps
 
 ## Installation
 
