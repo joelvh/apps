@@ -5,19 +5,19 @@ This is a toolkit to easily integrate into platform marketplaces and extension p
 The Apps gem is currently under development, with the goal of facilitating the following:
 
 * Gmail
-  * [Add-ons](https://developers.google.com/gmail/add-ons/)
-  * [Email Markup](https://developers.google.com/gmail/markup/)
-  * AMP Pages
+  * [ ] [Add-ons](https://developers.google.com/gmail/add-ons/)
+  * [x] [Email Markup](https://developers.google.com/gmail/markup/)
+  * [ ] AMP Pages
 * Microsoft Office 365
-  * [Outlook Add-ins](https://docs.microsoft.com/en-us/outlook/add-ins/)
-  * [Outlook Actionable Messages](https://docs.microsoft.com/en-us/outlook/actionable-messages/)
+  * [ ] [Outlook Add-ins](https://docs.microsoft.com/en-us/outlook/add-ins/)
+  * [x] [Outlook Actionable Messages](https://docs.microsoft.com/en-us/outlook/actionable-messages/)
 * Slack
-  * Bots
-  * Commands
+  * [ ] Bots
+  * [ ] Commands
 * Heroku Elements Marketplace
-  * [Add-ons](https://devcenter.heroku.com/articles/building-an-add-on)
+  * [ ] [Add-ons](https://devcenter.heroku.com/articles/building-an-add-on)
 * Facebook
-  * Instant Articles
+  * [ ] Instant Articles
 
 ## Installation
 
